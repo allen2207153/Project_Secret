@@ -73,8 +73,6 @@ void UGrabber::Grab()
 
 	FCollisionShape Sphere = FCollisionShape::MakeSphere(GrabRadius);
 	FHitResult HitResult;
-	DrawDebugLine(GetWorld(), Start, End, FColor::Red);
-	DrawDebugSphere(GetWorld(), End, 10, 10, FColor::Blue, false, 5);
 	bool HasHit = GetWorld()->SweepSingleByChannel(HitResult, Start, End, FQuat::Identity, ECC_GameTraceChannel1, Sphere);
 	if (HasHit)
 	{
@@ -87,7 +85,7 @@ void UGrabber::Grab()
 			HitComponent,
 			NAME_None,
 			HitResult.ImpactPoint,
-			HitResult.GetComponent()->GetComponentRotation());
+			GetComponentRotation());
 	}
 }
 
