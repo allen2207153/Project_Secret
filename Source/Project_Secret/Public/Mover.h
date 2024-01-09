@@ -24,7 +24,12 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	UFUNCTION(BlueprintCallable)
 	void  SetShouldMove(bool ShouldMove);
+
+	UPROPERTY(BlueprintReadWrite)
+	bool wwwww = true;
+	
 private:
 	UPROPERTY(EditAnywhere)
 	FVector MoveOffset;
