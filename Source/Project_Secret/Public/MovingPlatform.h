@@ -25,7 +25,7 @@ public:
 	
 private:
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(VisibleAnywhere)
 	FVector OriginalLocation;
 	FVector CurrentLocation;
 	UPROPERTY(EditAnywhere, Category = "Moving Platform")
