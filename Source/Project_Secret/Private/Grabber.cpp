@@ -34,7 +34,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 
 	FVector Start = GetComponentLocation();
 	FVector End = Start + GetForwardVector() * MaxGrabDistance;
-	DrawDebugLine(GetWorld(), Start, End, FColor::Red);
+	//DrawDebugLine(GetWorld(), Start, End, FColor::Red);
 	UPhysicsHandleComponent* PhysicsHandle = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
 	if (PhysicsHandle == nullptr)
 	{
@@ -76,8 +76,8 @@ void UGrabber::Grab()
 	bool HasHit = GetWorld()->SweepSingleByChannel(HitResult, Start, End, FQuat::Identity, ECC_GameTraceChannel1, Sphere);
 	if (HasHit)
 	{
-		DrawDebugLine(GetWorld(), Start, End, FColor::Red);
-		DrawDebugSphere(GetWorld(), End, 10, 10, FColor::Blue, false, 5);
+		//DrawDebugLine(GetWorld(), Start, End, FColor::Red);
+		//DrawDebugSphere(GetWorld(), End, 10, 10, FColor::Blue, false, 5);
 		UPrimitiveComponent* HitComponent = HitResult.GetComponent();
 		HitComponent->WakeAllRigidBodies();
 		HitResult.GetActor()->Tags.Add("Grabbed");
