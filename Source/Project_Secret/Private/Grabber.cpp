@@ -43,7 +43,7 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 
 	if (PhysicsHandle->GetGrabbedComponent() != nullptr)
 	{
-		FVector TargetLocation = GetComponentLocation() + GetForwardVector() * HoldDistance;
+		FVector TargetLocation = GetComponentLocation() + GetForwardVector() * HoldDistance + GetUpVector()*50 ;
 		PhysicsHandle->SetTargetLocationAndRotation(TargetLocation, GetComponentRotation());
 	}
 }
